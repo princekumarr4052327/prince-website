@@ -11,7 +11,18 @@ body {
     background: #f5f7fa;
     transition: 0.5s;
 }
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.5s ease forwards;
+}
 
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+    }
 .dark {
     background: #0f172a;
     color: white;
