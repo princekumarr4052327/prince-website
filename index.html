@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Prince Kumar | Resume</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <style>
 body {
     font-family: Arial;
@@ -6,20 +12,7 @@ body {
     transition: 0.5s;
 }
 
-/* Animation */
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* Dark Mode */
 .dark {
     background: #0f172a;
     color: white;
@@ -38,7 +31,7 @@ body {
     background: #1e293b;
 }
 
-/* 🔥 Header upgraded */
+/* Header */
 header {
     text-align: center;
     background: linear-gradient(135deg, #ff7e5f, #feb47b);
@@ -47,18 +40,31 @@ header {
     border-radius: 15px;
 }
 
+/* Animation */
+.fade-in {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeIn 1.2s ease forwards;
+}
+
+@keyframes fadeIn {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
 img {
     width: 120px;
     border-radius: 50%;
     margin-top: 10px;
 }
 
-/* 🔥 Headings colorful */
+/* Sections */
 h2 {
     border-bottom: 2px solid #ff7e5f;
 }
 
-/* Sections */
 .section {
     margin: 20px 0;
     opacity: 0;
@@ -88,7 +94,7 @@ h2 {
     to { width: var(--width); }
 }
 
-/* 🔥 Button colorful */
+/* Button */
 button {
     padding: 10px 15px;
     border: none;
@@ -100,15 +106,91 @@ button {
     transition: 0.3s;
 }
 
-/* ✨ Hover effect */
 button:hover {
     transform: scale(1.05);
     opacity: 0.9;
 }
 
+/* Dark Toggle Button */
 .dark-toggle {
     position: fixed;
     top: 10px;
     right: 10px;
 }
 </style>
+</head>
+
+<body>
+
+<button class="dark-toggle" onclick="toggleDark()">🌙</button>
+
+<div class="container">
+
+<header>
+    <h1 class="fade-in">Prince Kumar</h1>
+    <p class="fade-in">Student | Aspiring Programmer | Chess Player</p>
+    <img src="myphoto.jpg">
+</header>
+
+<div class="section">
+<h2>Objective</h2>
+<p>A passionate student who is eager to learn new skills, explore science and mathematics, and build a strong foundation in programming and problem-solving.</p>
+</div>
+
+<div class="section">
+<h2>Education</h2>
+<p>Class 10 (Currently Studying)</p>
+<p>DBRA CM SHRI School, Delhi</p>
+</div>
+
+<div class="section">
+<h2>Technical Skills</h2>
+
+<div class="skill">
+<div class="bar">
+<div class="fill" style="--width:60%">Python</div>
+</div>
+</div>
+
+<div class="skill">
+<div class="bar">
+<div class="fill" style="--width:75%">Video Editing</div>
+</div>
+</div>
+
+<div class="skill">
+<div class="bar">
+<div class="fill" style="--width:65%">Computer Knowledge</div>
+</div>
+</div>
+
+</div>
+
+<div class="section">
+<h2>Other Skills</h2>
+<ul>
+<li>Advanced Chess Player (ELO 1250+)</li>
+<li>Mental Maths Skills</li>
+<li>Strategic Thinking</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>Contact</h2>
+<button onclick="sendMail()">📧 Email Me</button>
+</div>
+
+</div>
+
+<script>
+function toggleDark() {
+    document.body.classList.toggle("dark");
+}
+
+function sendMail() {
+    window.location.href = "mailto:your@email.com";
+}
+</script>
+
+</body>
+</html>
