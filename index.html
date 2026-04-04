@@ -1,20 +1,16 @@
-<!DOCTYPE html>
-<html>
-<head>
-<title>Prince Kumar | Resume</title>
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
 <style>
 body {
     font-family: Arial;
     margin: 0;
-    background: #f5f7fa;
+    background: linear-gradient(135deg, #e0c3fc, #8ec5fc);
     transition: 0.5s;
 }
-    .fade-in {
+
+/* Animation */
+.fade-in {
   opacity: 0;
   transform: translateY(20px);
-  animation: fadeIn 1.5s ease forwards;
+  animation: fadeIn 1.2s ease forwards;
 }
 
 @keyframes fadeIn {
@@ -22,7 +18,8 @@ body {
     opacity: 1;
     transform: translateY(0);
   }
-    }
+}
+
 .dark {
     background: #0f172a;
     color: white;
@@ -33,6 +30,7 @@ body {
     margin: auto;
     background: white;
     padding: 20px;
+    border-radius: 15px;
     transition: 0.5s;
 }
 
@@ -40,11 +38,13 @@ body {
     background: #1e293b;
 }
 
+/* 🔥 Header upgraded */
 header {
     text-align: center;
-    background: #2563eb;
+    background: linear-gradient(135deg, #ff7e5f, #feb47b);
     color: white;
     padding: 20px;
+    border-radius: 15px;
 }
 
 img {
@@ -53,10 +53,12 @@ img {
     margin-top: 10px;
 }
 
+/* 🔥 Headings colorful */
 h2 {
-    border-bottom: 2px solid #2563eb;
+    border-bottom: 2px solid #ff7e5f;
 }
 
+/* Sections */
 .section {
     margin: 20px 0;
     opacity: 0;
@@ -75,7 +77,7 @@ h2 {
 }
 
 .fill {
-    background: #2563eb;
+    background: linear-gradient(90deg, #36d1dc, #5b86e5);
     padding: 8px;
     border-radius: 20px;
     width: 0;
@@ -86,15 +88,22 @@ h2 {
     to { width: var(--width); }
 }
 
-/* Button */
+/* 🔥 Button colorful */
 button {
     padding: 10px 15px;
     border: none;
-    background: #2563eb;
+    background: linear-gradient(135deg, #ff512f, #dd2476);
     color: white;
     border-radius: 5px;
     cursor: pointer;
     margin-top: 10px;
+    transition: 0.3s;
+}
+
+/* ✨ Hover effect */
+button:hover {
+    transform: scale(1.05);
+    opacity: 0.9;
 }
 
 .dark-toggle {
@@ -103,107 +112,3 @@ button {
     right: 10px;
 }
 </style>
-</head>
-
-<body>
-
-<button class="dark-toggle" onclick="toggleDark()">🌙</button>
-
-<div class="container">
-
-<header>
-    <h1 class="fade-in">Prince Kumar</h1>
-    <p class="fade-in">Student | Aspiring Programmer | Chess Player</p>
-    <img src="myphoto.jpg">
-</header>
-    
-<div class="section">
-<h2>Objective</h2>
-<p>A passionate student who is eager to learn new skills, explore science and mathematics, and build a strong foundation in programming and problem-solving.</p>
-</div>
-
-<div class="section">
-<h2>Education</h2>
-<p>Class 10 (Currently Studying)</p>
-<p>DBRA CM SHRI School, D-Block, Nand Nagri, Delhi</p>
-</div>
-
-<div class="section">
-<h2>Technical Skills</h2>
-
-<div class="skill">
-<div class="bar">
-<div class="fill" style="--width:60%">Python (Learning)</div>
-</div>
-</div>
-
-<div class="skill">
-<div class="bar">
-<div class="fill" style="--width:75%">Video Editing (PC)</div>
-</div>
-</div>
-
-<div class="skill">
-<div class="bar">
-<div class="fill" style="--width:65%">Computer Knowledge</div>
-</div>
-</div>
-
-</div>
-
-<div class="section">
-<h2>Other Skills</h2>
-<ul>
-<li>Advanced Chess Player (ELO 1250+)</li>
-<li>Mental Maths Skills</li>
-<li>Strategic Thinking</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Personal Skills</h2>
-<ul>
-<li>Quick Learner</li>
-<li>Curious & Self-Motivated</li>
-<li>Problem Solving</li>
-<li>Communication Skills (Average+)</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Achievements</h2>
-<ul>
-<li>State Level Mental Maths Participant</li>
-<li>State Level Chess Participant</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Hobbies & Interests</h2>
-<ul>
-<li>Playing Chess</li>
-<li>Studying Mathematics</li>
-<li>Exploring Science</li>
-<li>Learning New Skills</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>Contact</h2>
-<button onclick="sendMail()">📧 Email Me</button>
-</div>
-
-</div>
-
-<script>
-function toggleDark() {
-    document.body.classList.toggle("dark");
-}
-
-function sendMail() {
-    window.location.href = "mailto:your@email.com";
-}
-</script>
-
-</body>
-</html>
