@@ -160,24 +160,23 @@ button:hover {
 <button class="dark-toggle" onclick="toggleDark()">🌙</button>
 
 <script>
-/* COLORFUL FLOATING STARS BACKGROUND 🌟🌈 */
+/* 🌟 100 COLORFUL STARS BACKGROUND */
 const colors = ["#FF5C5C","#FFD93D","#6BCB77","#4D96FF","#9B5DE5"];
-const starsCount = 100; // total stars visible
-for(let i=0;i<starsCount;i++){
+for(let i=0;i<100;i++){
     let p = document.createElement("div");
     p.className = "particle";
 
-    // Random initial position
+    // Random position
     p.style.top = Math.random()*100+"vh";
     p.style.left = Math.random()*100+"vw";
 
-    // Random size 8-12px
+    // Size 8-12px
     p.style.width = (8 + Math.random()*4) + "px";
     p.style.height = (8 + Math.random()*4) + "px";
 
-    // Color & Opacity
+    // Color & opacity
     p.style.background = colors[Math.floor(Math.random()*colors.length)];
-    p.style.opacity = 0.98;
+    p.style.opacity = 0.98; // bright stars
 
     // Star shape
     p.style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
@@ -186,7 +185,7 @@ for(let i=0;i<starsCount;i++){
     let duration = 5 + Math.random()*5; // 5s to 10s
     p.style.animation = `float ${duration}s linear infinite`;
 
-    document.body.appendChild(p);
+    document.body.appendChild(p); // stars visible from start
 }
 </script>
 
