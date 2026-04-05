@@ -11,34 +11,22 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     overflow-x: hidden;
-    cursor: none;
+    cursor: auto; /* Normal cursor */
 }
 
-/* CUSTOM CURSOR */
-.cursor {
-    width: 15px;
-    height: 15px;
-    border-radius: 50%;
-    background: white;
+/* PARTICLES → COLORFUL STARS */
+.star {
     position: fixed;
-    pointer-events: none;
-    z-index: 999;
-}
-
-/* PARTICLES */
-.particle {
-    position: fixed;
-    width: 6px;
-    height: 6px;
-    background: white;
+    width: 5px;
+    height: 5px;
     border-radius: 50%;
-    opacity: 0.7;
-    animation: move 5s linear infinite;
+    opacity: 0.8;
+    animation: moveStars linear infinite;
 }
 
-@keyframes move {
-    from { transform: translateX(-100px); }
-    to { transform: translateX(110vw); }
+@keyframes moveStars {
+    from { transform: translateY(-50px); }
+    to { transform: translateY(110vh); }
 }
 
 /* Container */
@@ -162,27 +150,48 @@ button:hover {
 
 <body>
 
-<div class="cursor" id="cursor"></div>
-
 <button class="dark-toggle" onclick="toggleDark()">🌙</button>
 
 <script>
-/* PARTICLES */
-for(let i=0;i<40;i++){
-    let p=document.createElement("div");
-    p.className="particle";
-    p.style.top=Math.random()*100+"vh";
-    p.style.left=Math.random()*100+"vw";
-    p.style.animationDuration=(3+Math.random()*5)+"s";
-    document.body.appendChild(p);
+/* COLORFUL STARS */
+const colors = ["#ffdd00","#ff0044","#00ffee","#00ff77","#ff8800","#aa00ff"];
+for(let i=0;i<50;i++){
+    let star=document.createElement("div");
+    star.className="star";
+    star.style.top=Math.random()*100+"vh";
+    star.style.left=Math.random()*100+"vw";
+    star.style.width=star.style.height=(2+Math.random()*4)+"px"; // random size
+    star.style.background=colors[Math.floor(Math.random()*colors.length)];
+    star.style.animationDuration=(5+Math.random()*5)+"s"; // random speed
+    document.body.appendChild(star);
 }
 
-/* CURSOR */
-const cursor=document.getElementById("cursor");
-document.addEventListener("mousemove",e=>{
-cursor.style.top=e.clientY+"px";
-cursor.style.left=e.clientX+"px";
-});
+/* Dark Mode Toggle */
+function toggleDark() {
+    document.body.classList.toggle("dark");
+}
+
+/* Email button */
+function sendMail() {
+    window.location.href = "mailto:your@email.com";
+}
+
+/* Typing */
+function type(id,text,speed){
+let i=0;
+function t(){
+if(i<text.length){
+document.getElementById(id).innerHTML+=text.charAt(i);
+i++;
+setTimeout(t,speed);
+}}
+t();
+}
+
+type("type1","A passionate student❤️ who is eager😎 to learn new skills👍🏻, explore science🧬 and mathematics🧮, and build a strong foundation in programming👨🏻‍💻 and problem-solving🤔.",20);
+
+setTimeout(()=>type("type2","Class 10 (Currently Studying) 🎓",30),2000);
+setTimeout(()=>type("type3","DBRA CM SHRI School, Delhi 🏫",30),3500);
 </script>
 
 <div class="container">
@@ -222,13 +231,11 @@ cursor.style.left=e.clientX+"px";
 
 <div class="section">
 <h2>💻 Technical Skills</h2>
-
 <div class="bar"><div class="fill" style="--width:85%">♟️ Chess Mastery</div></div>
 <div class="bar"><div class="fill" style="--width:60%">🐍 Python</div></div>
 <div class="bar"><div class="fill" style="--width:75%">🎬 Video Editing</div></div>
 <div class="bar"><div class="fill" style="--width:65%">🖥️ Computer Knowledge</div></div>
 <div class="bar"><div class="fill" style="--width:70%">🌐 Web Development</div></div>
-
 </div>
 
 <div class="section">
@@ -254,33 +261,6 @@ cursor.style.left=e.clientX+"px";
 </div>
 
 </div>
-
-<script>
-function toggleDark() {
-    document.body.classList.toggle("dark");
-}
-
-function sendMail() {
-    window.location.href = "mailto:your@email.com";
-}
-
-/* Typing */
-function type(id,text,speed){
-let i=0;
-function t(){
-if(i<text.length){
-document.getElementById(id).innerHTML+=text.charAt(i);
-i++;
-setTimeout(t,speed);
-}}
-t();
-}
-
-type("type1","A passionate student❤️ who is eager😎 to learn new skills👍🏻, explore science🧬 and mathematics🧮, and build a strong foundation in programming👨🏻‍💻 and problem-solving🤔.",20);
-
-setTimeout(()=>type("type2","Class 10 (Currently Studying) 🎓",30),2000);
-setTimeout(()=>type("type3","DBRA CM SHRI School, Delhi 🏫",30),3500);
-</script>
 
 </body>
 </html>
