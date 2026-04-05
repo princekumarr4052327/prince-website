@@ -167,14 +167,19 @@ button:hover {
 <button class="dark-toggle" onclick="toggleDark()">🌙</button>
 
 <script>
-/* PARTICLES */
-for(let i=0;i<40;i++){
-    let p=document.createElement("div");
-    p.className="particle";
-    p.style.top=Math.random()*100+"vh";
-    p.style.left=Math.random()*100+"vw";
-    p.style.animationDuration=(3+Math.random()*5)+"s";
-    document.body.appendChild(p);
+.particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: white; /* ये JS में color बदलेंगे */
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: move 5s linear infinite;
+    clip-path: polygon(
+        50% 0%, 61% 35%, 98% 35%, 68% 57%,
+        79% 91%, 50% 70%, 21% 91%, 32% 57%,
+        2% 35%, 39% 35%
+    ); /* star shape */
 }
 
 /* CURSOR */
