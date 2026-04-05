@@ -172,6 +172,12 @@ for(let i=0;i<120;i++){   // <-- 3x stars
     let p = document.createElement("div");
     p.className = "particle";
     
+   /* COLORFUL STARS BACKGROUND 🌟🌈 */
+const colors = ["#FF5C5C","#FFD93D","#6BCB77","#4D96FF","#9B5DE5"];
+for(let i=0;i<100;i++){   // <-- 100 stars
+    let p = document.createElement("div");
+    p.className = "particle";
+    
     // Position
     p.style.top = Math.random()*100+"vh";
     p.style.left = Math.random()*100+"vw";
@@ -182,7 +188,7 @@ for(let i=0;i<120;i++){   // <-- 3x stars
     
     // Color & Opacity
     p.style.background = colors[Math.floor(Math.random()*colors.length)];
-    p.style.opacity = 0.98;   // <-- opacity aur badha di
+    p.style.opacity = 0.98;   // <-- bright stars
     
     // Animation duration random
     p.style.animationDuration = (3 + Math.random()*5)+"s";
@@ -190,8 +196,9 @@ for(let i=0;i<120;i++){   // <-- 3x stars
     // Star shape
     p.style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
     
-    document.body.appendChild(p); // stars turant visible
+    document.body.appendChild(p); // stars visible from start
 }
+
 </script>
 
 <div class="container">
