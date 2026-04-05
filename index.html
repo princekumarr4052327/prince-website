@@ -168,7 +168,7 @@ button:hover {
 <script>
 /* COLORFUL STARS BACKGROUND 🌟🌈 */
 const colors = ["#FF5C5C","#FFD93D","#6BCB77","#4D96FF","#9B5DE5"];
-for(let i=0;i<40;i++){
+for(let i=0;i<120;i++){   // <-- 3x stars
     let p = document.createElement("div");
     p.className = "particle";
     
@@ -182,7 +182,7 @@ for(let i=0;i<40;i++){
     
     // Color & Opacity
     p.style.background = colors[Math.floor(Math.random()*colors.length)];
-    p.style.opacity = 0.95;   // <-- opacity thodi aur badha di
+    p.style.opacity = 0.98;   // <-- opacity aur badha di
     
     // Animation duration random
     p.style.animationDuration = (3 + Math.random()*5)+"s";
