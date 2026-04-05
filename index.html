@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
 <head>
-<title>Prince Kumar😎👑 | Resume</title>
+<title>Prince Kumar😎 | Resume</title>
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
@@ -36,13 +36,21 @@ body {
     padding: 20px;
 }
 
+/* Sections */
+.section {
+    margin: 25px 0;
+    padding: 15px;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.05);
+}
+
 /* Header */
 header {
     text-align: center;
     padding: 20px;
 }
 
-/* Fade */
+/* Animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -56,7 +64,7 @@ header {
   }
 }
 
-/* ❤️ HEART + BEAT */
+/* ❤️ HEART */
 .heart-img {
     width: 230px;
     height: 210px;
@@ -66,9 +74,7 @@ header {
 
 @keyframes heartbeat {
     0% { transform: scale(1); }
-    25% { transform: scale(1.08); }
-    50% { transform: scale(1); }
-    75% { transform: scale(1.08); }
+    50% { transform: scale(1.08); }
     100% { transform: scale(1); }
 }
 
@@ -81,12 +87,7 @@ header {
     box-shadow: 0 0 20px rgba(255, 0, 100, 0.6);
 }
 
-/* Sections */
-.section {
-    margin: 20px 0;
-}
-
-/* Typing text hidden initially */
+/* Typing */
 .type {
     border-right: 2px solid white;
     white-space: normal;
@@ -107,7 +108,7 @@ h2 {
 }
 
 .bar:hover {
-    transform: scale(1.03);
+    transform: scale(1.05);
 }
 
 .fill {
@@ -135,14 +136,10 @@ button {
 
 button:hover {
     transform: scale(1.1);
-    box-shadow: 0 0 10px rgba(255,255,255,0.6);
+    box-shadow: 0 0 10px white;
 }
 
 /* Dark Mode */
-.dark {
-    background: #0f172a;
-}
-
 .dark-toggle {
     position: fixed;
     top: 10px;
@@ -155,7 +152,6 @@ button:hover {
 
 <button class="dark-toggle" onclick="toggleDark()">🌙</button>
 
-<!-- PARTICLES -->
 <script>
 for(let i=0;i<40;i++){
     let p=document.createElement("div");
@@ -170,53 +166,57 @@ for(let i=0;i<40;i++){
 <div class="container">
 
 <header>
-    <h1 class="fade-in">Prince Kumar</h1>
-    <p class="fade-in">Student | Aspiring Programmer | Chess Player</p>
+<h1 class="fade-in">Prince Kumar 😎</h1>
+<p class="fade-in">Student 👨‍🎓 | Aspiring Programmer 💻 | Chess Player ♟️</p>
 
-    <div class="heart-img">
-        <img src="myphoto.jpg">
-    </div>
+<div class="heart-img">
+<img src="myphoto.jpg">
+</div>
 </header>
 
 <div class="section">
-<h2>Objective</h2>
+<h2>🎯 Objective</h2>
 <p id="type1" class="type"></p>
 </div>
 
 <div class="section">
-<h2>Education</h2>
+<h2>🏫 Education</h2>
 <p id="type2" class="type"></p>
 <p id="type3" class="type"></p>
 </div>
 
 <div class="section">
-<h2>Technical Skills</h2>
+<h2>💻 Technical Skills</h2>
 
 <div class="bar">
-<div class="fill" style="--width:60%">Python (Learning)</div>
+<div class="fill" style="--width:85%">♟️ Chess Mastery</div>
 </div>
 
 <div class="bar">
-<div class="fill" style="--width:75%">Video Editing (PC)</div>
+<div class="fill" style="--width:60%">🐍 Python (Learning)</div>
 </div>
 
 <div class="bar">
-<div class="fill" style="--width:65%">Computer Knowledge</div>
+<div class="fill" style="--width:75%">🎬 Video Editing</div>
+</div>
+
+<div class="bar">
+<div class="fill" style="--width:65%">🖥️ Computer Knowledge</div>
 </div>
 
 </div>
 
 <div class="section">
-<h2>Other Skills</h2>
+<h2>🌟 Other Skills</h2>
 <ul>
-<li>"Advanced"👑 Chess♟️ Player (ELO 1250+)</li>
-<li>Mental Maths🧮 Skills</li>
-<li>Strategic Thinking🤔</li>
+<li>♟️ Advanced Chess Player (ELO 1250+)</li>
+<li>🧠 Mental Maths Skills</li>
+<li>🎯 Strategic Thinking</li>
 </ul>
 </div>
 
 <div class="section">
-<h2>Contact</h2>
+<h2>📞 Contact</h2>
 <button onclick="sendMail()">📧 Email Me</button>
 </div>
 
@@ -231,24 +231,22 @@ function sendMail() {
     window.location.href = "mailto:your@email.com";
 }
 
-/* TYPING EFFECT */
+/* Typing */
 function type(id,text,speed){
-    let i=0;
-    function typing(){
-        if(i<text.length){
-            document.getElementById(id).innerHTML+=text.charAt(i);
-            i++;
-            setTimeout(typing,speed);
-        }
-    }
-    typing();
+let i=0;
+function t(){
+if(i<text.length){
+document.getElementById(id).innerHTML+=text.charAt(i);
+i++;
+setTimeout(t,speed);
+}}
+t();
 }
 
 type("type1","A passionate student❤️ who is eager😎 to learn new skills👍🏻, explore science🧬 and mathematics🧮, and build a strong foundation in programming👨🏻‍💻 and problem-solving🤔.",20);
 
-setTimeout(()=>type("type2","Class 10 (Currently Studying)",30),2000);
-setTimeout(()=>type("type3","DBRA CM SHRI School🏫, D-Block, Nand Nagri, Delhi",30),3500);
-
+setTimeout(()=>type("type2","Class 10 (Currently Studying) 🎓",30),2000);
+setTimeout(()=>type("type3","DBRA CM SHRI School, D-Block, Nand Nagri, Delhi 🏫",30),3500);
 </script>
 
 </body>
