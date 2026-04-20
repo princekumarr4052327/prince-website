@@ -11,17 +11,15 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     overflow-x: hidden;
-    cursor: default; /* Normal cursor */
+    cursor: default;
 }
 
-/* PARTICLES / STARS */
 .particle {
     position: fixed;
     border-radius: 50%;
     z-index: 0;
 }
 
-/* Star float animation */
 @keyframes float {
     0% { transform: translate(0px, 0px) rotate(0deg); }
     25% { transform: translate(30px, -20px) rotate(45deg); }
@@ -30,16 +28,14 @@ body {
     100% { transform: translate(0px, 0px) rotate(180deg); }
 }
 
-/* Container */
 .container {
     max-width: 900px;
     margin: auto;
     padding: 20px;
     position: relative;
-    z-index: 1; /* content above stars */
+    z-index: 1;
 }
 
-/* Sections */
 .section {
     margin: 25px 0;
     padding: 15px;
@@ -49,15 +45,11 @@ body {
     z-index: 1;
 }
 
-/* Header */
 header {
     text-align: center;
     padding: 20px;
-    position: relative;
-    z-index: 1;
 }
 
-/* Animation */
 .fade-in {
   opacity: 0;
   transform: translateY(20px);
@@ -71,7 +63,6 @@ header {
   }
 }
 
-/* ❤️ HEART */
 .heart-img {
     width: 230px;
     height: 210px;
@@ -94,19 +85,16 @@ header {
     box-shadow: 0 0 20px rgba(255, 0, 100, 0.6);
 }
 
-/* Typing */
 .type {
     border-right: 2px solid white;
     white-space: normal;
     overflow: hidden;
 }
 
-/* Headings */
 h2 {
     border-bottom: 2px solid white;
 }
 
-/* Skill Bars */
 .bar {
     background: rgba(255,255,255,0.2);
     border-radius: 20px;
@@ -130,7 +118,6 @@ h2 {
     to { width: var(--width); }
 }
 
-/* Button */
 button {
     padding: 10px 15px;
     border: none;
@@ -138,15 +125,8 @@ button {
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
 }
 
-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px white;
-}
-
-/* Dark Mode */
 .dark-toggle {
     position: fixed;
     top: 10px;
@@ -160,32 +140,18 @@ button:hover {
 <button class="dark-toggle" onclick="toggleDark()">🌙</button>
 
 <script>
-/* 🌟 100 COLORFUL STARS BACKGROUND */
 const colors = ["#FF5C5C","#FFD93D","#6BCB77","#4D96FF","#9B5DE5"];
 for(let i=0;i<100;i++){
     let p = document.createElement("div");
     p.className = "particle";
-
-    // Random position
     p.style.top = Math.random()*100+"vh";
     p.style.left = Math.random()*100+"vw";
-
-    // Size 8-12px
     p.style.width = (8 + Math.random()*4) + "px";
     p.style.height = (8 + Math.random()*4) + "px";
-
-    // Color & opacity
     p.style.background = colors[Math.floor(Math.random()*colors.length)];
-    p.style.opacity = 0.98; // bright stars
-
-    // Star shape
     p.style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
-
-    // Random animation duration
-    let duration = 5 + Math.random()*5; // 5s to 10s
-    p.style.animation = `float ${duration}s linear infinite`;
-
-    document.body.appendChild(p); // stars visible from start
+    p.style.animation = `float ${5 + Math.random()*5}s linear infinite`;
+    document.body.appendChild(p);
 }
 </script>
 
@@ -201,8 +167,13 @@ for(let i=0;i<100;i++){
 </header>
 
 <div class="section">
+<h2>📸 My Photo</h2>
+<img src="myphoto.jpg" style="width:200px;height:200px;border-radius:20px;">
+</div>
+
+<div class="section">
 <h2>🙋 About Me</h2>
-<p id="typeAbout" class="type">I am Prince 😎, a passionate learner 💡 who loves Chess ♟️ and Programming 💻. My goal is to become a skilled developer and problem solver 🚀.</p>
+<p id="typeAbout" class="type"></p>
 </div>
 
 <div class="section">
@@ -217,37 +188,48 @@ for(let i=0;i<100;i++){
 </div>
 
 <div class="section">
-<h2>📂 Projects</h2>
+<h2>🎯 Hobbies</h2>
 <ul>
-<li>🌐 Personal Portfolio Website</li>
-<li>♟️ Chess Strategy Learning</li>
+<li>🎮 Playing Mobile Games</li>
+<li>♟️ Playing Chess</li>
+<li>💻 Learning New Technology</li>
+<li>📺 Watching Educational Videos</li>
+</ul>
+</div>
+
+<div class="section">
+<h2>✅ Habits</h2>
+<ul>
+<li>✔️ Complete work on time</li>
+<li>✔️ Learn something new daily</li>
 </ul>
 </div>
 
 <div class="section">
 <h2>💻 Technical Skills</h2>
-<div class="bar"><div class="fill" style="--width:85%">♟️ Chess Mastery</div></div>
+<div class="bar"><div class="fill" style="--width:85%">♟️ Chess</div></div>
 <div class="bar"><div class="fill" style="--width:60%">🐍 Python</div></div>
-<div class="bar"><div class="fill" style="--width:75%">🎬 Video Editing</div></div>
-<div class="bar"><div class="fill" style="--width:65%">🖥️ Computer Knowledge</div></div>
-<div class="bar"><div class="fill" style="--width:70%">🌐 Web Development</div></div>
+<div class="bar"><div class="fill" style="--width:70%">🌐 Web Dev</div></div>
+</div>
+
+<div class="section">
+<h2>🌟 Personal Skills</h2>
+<div class="bar"><div class="fill" style="--width:80%">Learning</div></div>
+<div class="bar"><div class="fill" style="--width:75%">Time Management</div></div>
 </div>
 
 <div class="section">
 <h2>🏆 Achievements</h2>
 <ul>
-<li>🏅 State Level Chess Participant</li>
-<li>🧠 Mental Maths Competition</li>
+<li>🎯 90% in Class 9</li>
+<li>💻 Computer Skills</li>
+<li>🌐 Portfolio Website</li>
 </ul>
 </div>
 
 <div class="section">
-<h2>📅 Timeline</h2>
-<ul>
-<li>2023 - Started Learning 📚</li>
-<li>2024 - Chess Growth ♟️</li>
-<li>2025 - Programming 💻</li>
-</ul>
+<h2>💭 Quote</h2>
+<p>"Small efforts daily lead to big success."</p>
 </div>
 
 <div class="section">
@@ -258,15 +240,14 @@ for(let i=0;i<100;i++){
 </div>
 
 <script>
-function toggleDark() {
+function toggleDark(){
     document.body.classList.toggle("dark");
 }
 
-function sendMail() {
-    window.location.href = "mailto:your@email.com";
+function sendMail(){
+    window.location.href="mailto:princekumarr123@gmail.com";
 }
 
-/* Typing Effect */
 function type(id,text,speed){
     let i=0;
     function t(){
@@ -279,15 +260,10 @@ function type(id,text,speed){
     t();
 }
 
-/* About Me typing */
-let aboutText = "I am Prince 😎, a passionate learner 💡 who loves Chess ♟️ and Programming 💻. My goal is to become a skilled developer and problem solver 🚀.";
-document.getElementById("typeAbout").innerHTML = "";
-type("typeAbout",aboutText,20);
-
-type("type1","A passionate student❤️ who is eager😎 to learn new skills👍🏻, explore science🧬 and mathematics🧮, and build a strong foundation in programming👨🏻‍💻 and problem-solving🤔.",20);
-
-setTimeout(()=>type("type2","Class 10 (Currently Studying) 🎓",30),2000);
-setTimeout(()=>type("type3","DBRA CM SHRI School, Delhi 🏫",30),3500);
+type("typeAbout","I am Prince 😎, a passionate learner 💡 who loves Chess ♟️ and Programming 💻.",20);
+type("type1","A student eager to grow and learn 🚀.",20);
+setTimeout(()=>type("type2","Class 10 🎓",30),2000);
+setTimeout(()=>type("type3","School Delhi 🏫",30),3500);
 </script>
 
 </body>
