@@ -11,9 +11,9 @@ body {
     background: linear-gradient(135deg, #667eea, #764ba2);
     color: white;
     overflow-x: hidden;
-    cursor: default;
 }
 
+/* STARS */
 .particle {
     position: fixed;
     border-radius: 50%;
@@ -22,12 +22,11 @@ body {
 
 @keyframes float {
     0% { transform: translate(0px, 0px) rotate(0deg); }
-    25% { transform: translate(30px, -20px) rotate(45deg); }
-    50% { transform: translate(-25px, 15px) rotate(90deg); }
-    75% { transform: translate(20px, -10px) rotate(135deg); }
+    50% { transform: translate(20px, -20px) rotate(90deg); }
     100% { transform: translate(0px, 0px) rotate(180deg); }
 }
 
+/* MAIN */
 .container {
     max-width: 900px;
     margin: auto;
@@ -36,33 +35,26 @@ body {
     z-index: 1;
 }
 
+/* GLASS EFFECT */
 .section {
     margin: 25px 0;
     padding: 15px;
-    border-radius: 10px;
-    background: rgba(255,255,255,0.05);
-    position: relative;
-    z-index: 1;
+    border-radius: 15px;
+    background: rgba(255,255,255,0.08);
+    backdrop-filter: blur(10px);
+    transition: 0.3s;
+}
+
+.section:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px rgba(255,255,255,0.3);
 }
 
 header {
     text-align: center;
-    padding: 20px;
 }
 
-.fade-in {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeIn 1.2s ease forwards;
-}
-
-@keyframes fadeIn {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
+/* HEART IMAGE */
 .heart-img {
     width: 230px;
     height: 210px;
@@ -71,200 +63,142 @@ header {
 }
 
 @keyframes heartbeat {
-    0% { transform: scale(1); }
     50% { transform: scale(1.08); }
-    100% { transform: scale(1); }
 }
 
 .heart-img img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: top;
     clip-path: path("M115 210 C40 140, 10 80, 60 40 C95 10, 135 10, 170 40 C220 80, 190 140, 115 210 Z");
-    box-shadow: 0 0 20px rgba(255, 0, 100, 0.6);
 }
 
+/* TYPE */
 .type {
     border-right: 2px solid white;
-    white-space: normal;
-    overflow: hidden;
 }
 
-h2 {
-    border-bottom: 2px solid white;
-}
-
+/* SKILLS */
 .bar {
     background: rgba(255,255,255,0.2);
     border-radius: 20px;
     margin: 10px 0;
-    transition: 0.3s;
-}
-
-.bar:hover {
-    transform: scale(1.05);
 }
 
 .fill {
     background: linear-gradient(90deg, #36d1dc, #5b86e5);
     padding: 8px;
     border-radius: 20px;
-    width: 0;
-    animation: fillAnim 2s forwards;
 }
 
-@keyframes fillAnim {
-    to { width: var(--width); }
-}
-
+/* BUTTON */
 button {
-    padding: 10px 15px;
+    padding: 10px;
     border: none;
     background: linear-gradient(135deg, #ff512f, #dd2476);
     color: white;
     border-radius: 5px;
     cursor: pointer;
-    transition: 0.3s;
-}
-
-button:hover {
-    transform: scale(1.1);
-    box-shadow: 0 0 10px white;
-}
-
-.dark-toggle {
-    position: fixed;
-    top: 10px;
-    right: 10px;
 }
 </style>
 </head>
 
 <body>
 
-<button class="dark-toggle" onclick="toggleDark()">🌙</button>
-
 <script>
 const colors = ["#FF5C5C","#FFD93D","#6BCB77","#4D96FF","#9B5DE5"];
-for(let i=0;i<100;i++){
-    let p = document.createElement("div");
-    p.className = "particle";
-    p.style.top = Math.random()*100+"vh";
-    p.style.left = Math.random()*100+"vw";
-    p.style.width = (8 + Math.random()*4) + "px";
-    p.style.height = (8 + Math.random()*4) + "px";
-    p.style.background = colors[Math.floor(Math.random()*colors.length)];
-    p.style.opacity = 0.98;
-    p.style.clipPath = "polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
-    let duration = 5 + Math.random()*5;
-    p.style.animation = `float ${duration}s linear infinite`;
-    document.body.appendChild(p);
+for(let i=0;i<80;i++){
+ let p=document.createElement("div");
+ p.className="particle";
+ p.style.top=Math.random()*100+"vh";
+ p.style.left=Math.random()*100+"vw";
+ p.style.width="10px";
+ p.style.height="10px";
+ p.style.background=colors[Math.floor(Math.random()*colors.length)];
+ p.style.clipPath="polygon(50% 0%, 61% 35%, 98% 35%, 68% 57%, 79% 91%, 50% 70%, 21% 91%, 32% 57%, 2% 35%, 39% 35%)";
+ p.style.animation=`float ${5+Math.random()*5}s linear infinite`;
+ document.body.appendChild(p);
 }
 </script>
 
 <div class="container">
 
 <header>
-<h1 class="fade-in">Prince Kumar 😎</h1>
-<p class="fade-in">Student 👨‍🎓 | Aspiring Programmer 💻 | Chess Player ♟️</p>
+<h1>Prince Kumar 😎</h1>
+<p>Student | Learner | Future Achiever 🚀</p>
 
 <div class="heart-img">
 <img src="myphoto.jpg">
 </div>
 </header>
 
-<!-- NEW PHOTO SECTION -->
-<div class="section" style="text-align:center;">
-<h2>📸 My Photo</h2>
-<img src="myphoto.jpg" style="width:200px;height:200px;border-radius:20px;object-fit:cover;box-shadow:0 0 15px rgba(255,255,255,0.5);">
-</div>
-
 <div class="section">
 <h2>🙋 About Me</h2>
-<p id="typeAbout" class="type"></p>
+<p id="typeAbout"></p>
 </div>
 
 <div class="section">
 <h2>🎯 Objective</h2>
-<p id="type1" class="type"></p>
+<p id="type1"></p>
 </div>
 
 <div class="section">
 <h2>🏫 Education</h2>
-<p id="type2" class="type"></p>
-<p id="type3" class="type"></p>
+<p id="type2"></p>
+<p id="type3"></p>
 </div>
 
-<!-- NEW HOBBIES -->
 <div class="section">
-<h2>🎯 Hobbies</h2>
+<h2>🎯 My Hobbies</h2>
 <ul>
-<li>🎮 Playing Mobile Games</li>
-<li>♟️ Playing Chess</li>
-<li>💻 Learning New Technology</li>
-<li>📺 Watching Educational Videos</li>
+<li>Playing mobile games</li>
+<li>Playing chess</li>
+<li>Learning new technology</li>
+<li>Watching educational videos</li>
 </ul>
 </div>
 
-<!-- NEW HABITS -->
 <div class="section">
 <h2>✅ My Habits</h2>
 <ul>
-<li>✔️ I complete my work on time</li>
-<li>✔️ I try to learn something new daily</li>
-</ul>
-</div>
-
-<div class="section">
-<h2>📂 Projects</h2>
-<ul>
-<li>🌐 Personal Portfolio Website</li>
-<li>♟️ Chess Strategy Learning</li>
+<li>I complete my work on time</li>
+<li>I try to learn something new daily</li>
 </ul>
 </div>
 
 <div class="section">
 <h2>💻 Technical Skills</h2>
-<div class="bar"><div class="fill" style="--width:85%">♟️ Chess Mastery</div></div>
-<div class="bar"><div class="fill" style="--width:60%">🐍 Python</div></div>
-<div class="bar"><div class="fill" style="--width:75%">🎬 Video Editing</div></div>
-<div class="bar"><div class="fill" style="--width:65%">🖥️ Computer Knowledge</div></div>
-<div class="bar"><div class="fill" style="--width:70%">🌐 Web Development</div></div>
+<div class="bar"><div class="fill" style="width:85%">Chess</div></div>
+<div class="bar"><div class="fill" style="width:60%">Python</div></div>
+<div class="bar"><div class="fill" style="width:70%">Web Development</div></div>
 </div>
 
-<!-- NEW PERSONAL SKILLS -->
 <div class="section">
 <h2>🌟 Personal Skills</h2>
-<div class="bar"><div class="fill" style="--width:80%">📚 Learning New Things</div></div>
-<div class="bar"><div class="fill" style="--width:75%">⏱️ Time Management</div></div>
-<div class="bar"><div class="fill" style="--width:70%">🎥 Educational Content</div></div>
-<div class="bar"><div class="fill" style="--width:65%">🎮 Gaming</div></div>
-</div>
-
-<!-- UPDATED ACHIEVEMENTS -->
-<div class="section">
-<h2>🏆 Achievements</h2>
 <ul>
-<li>🎯 Scored 90% in Class 9</li>
-<li>💻 Learned Basic Computer Skills</li>
-<li>🌐 Created My First Portfolio Website</li>
+<li>Time Management</li>
+<li>Quick Learning</li>
+<li>Consistency</li>
 </ul>
 </div>
 
 <div class="section">
-<h2>📅 Timeline</h2>
+<h2>🏆 My Achievements</h2>
 <ul>
-<li>2023 - Started Learning 📚</li>
-<li>2024 - Chess Growth ♟️</li>
-<li>2025 - Programming 💻</li>
+<li>Scored 90+% in 9th class</li>
+<li>Learned basic computer skills</li>
+<li>I made my first portfolio website</li>
 </ul>
 </div>
 
-<!-- NEW QUOTE -->
+<div class="section">
+<h2>📸 My Photo</h2>
+<img src="myphoto.jpg" width="200">
+</div>
+
 <div class="section">
 <h2>💭 Quote</h2>
-<p>"I believe small efforts every day lead to big success."</p>
+<p>"I believe small effort everyday lead to big success."</p>
 </div>
 
 <div class="section">
@@ -275,34 +209,25 @@ for(let i=0;i<100;i++){
 </div>
 
 <script>
-function toggleDark() {
-    document.body.classList.toggle("dark");
+function sendMail(){
+ window.location.href="mailto:princekumarr123@gmail.com";
 }
 
-function sendMail() {
-    window.location.href = "mailto:princekumarr123@gmail.com";
+function type(id,text){
+ let i=0;
+ function t(){
+  if(i<text.length){
+   document.getElementById(id).innerHTML+=text.charAt(i);
+   i++;
+   setTimeout(t,20);
+  }
+ }
+ t();
 }
 
-function type(id,text,speed){
-    let i=0;
-    function t(){
-        if(i<text.length){
-            document.getElementById(id).innerHTML+=text.charAt(i);
-            i++;
-            setTimeout(t,speed);
-        }
-    }
-    t();
-}
-
-let aboutText = "I am Prince 😎, a passionate learner 💡 who loves Chess ♟️ and Programming 💻. My goal is to become a skilled developer and problem solver 🚀.";
-document.getElementById("typeAbout").innerHTML = "";
-type("typeAbout",aboutText,20);
-
-type("type1","A passionate student ❤️ who is eager 😎 to learn new skills, explore science and mathematics, and build a strong foundation in programming and problem-solving.",20);
-
-setTimeout(()=>type("type2","Class 10 (Currently Studying) 🎓",30),2000);
-setTimeout(()=>type("type3","DBRA CM SHRI School, Delhi 🏫",30),3500);
+type("typeAbout","Hello! I am Prince Kumar 😎, a passionate learner 💡 who loves Chess ♟️ and Programming 💻. My goal is to become a skilled developer and problem solver 🚀.");
+setTimeout(()=>type("type2","Class 10 (Currently Studying)"),1500);
+setTimeout(()=>type("type3","DBRA CM SHRI School, Delhi"),2500);
 </script>
 
 </body>
